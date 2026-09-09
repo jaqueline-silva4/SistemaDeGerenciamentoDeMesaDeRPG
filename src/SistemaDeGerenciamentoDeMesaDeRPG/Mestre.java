@@ -27,7 +27,7 @@ public class Mestre {
 	}
 	
 	public String narrar(String mensagem) {
-		return mensagem;
+		return "Mestre " + nome + ": " + mensagem;
 	}
 
 }
