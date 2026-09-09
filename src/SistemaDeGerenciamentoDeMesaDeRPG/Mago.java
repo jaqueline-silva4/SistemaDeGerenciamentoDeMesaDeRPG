@@ -1,12 +1,12 @@
 package SistemaDeGerenciamentoDeMesaDeRPG;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Mago extends Personagem implements Atacante {
 	
 	private int inteligencia;
 
-	public Mago(Long id, String nome, int nivel, int vida, ArrayList<Item> itens, Personagem mentor, int inteligencia) {
+	public Mago(Long id, String nome, int nivel, int vida, List<Item> itens, Personagem mentor, int inteligencia) {
 		super(id, nome, nivel, vida, itens, mentor);
 		this.inteligencia = inteligencia;
 	}
@@ -24,9 +24,8 @@ public class Mago extends Personagem implements Atacante {
 	}
 
 	@Override
-	public void atacar(String atacar) {
-		System.out.println("Mago atacando!");		
-		
+	public String atacar() {
+		return "Mago atacando com inteligência " + inteligencia + "!";
 	}
 
 }
