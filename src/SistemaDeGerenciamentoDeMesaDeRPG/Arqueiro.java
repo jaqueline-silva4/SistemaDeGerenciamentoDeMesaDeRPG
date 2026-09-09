@@ -1,12 +1,12 @@
 package SistemaDeGerenciamentoDeMesaDeRPG;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Arqueiro extends Personagem implements Atacante {
 	
 	private int precisao;
 
-	public Arqueiro(Long id, String nome, int nivel, int vida, ArrayList<Item> itens, Personagem mentor, int precisao) {
+	public Arqueiro(Long id, String nome, int nivel, int vida, List<Item> itens, Personagem mentor, int precisao) {
 		super(id, nome, nivel, vida, itens, mentor);
 		this.precisao = precisao;
 	}
@@ -24,8 +24,8 @@ public class Arqueiro extends Personagem implements Atacante {
 	}
 
 	@Override
-	public void atacar(String atacar) {
-		System.out.println("Arqueiro atacando!");		
+	public String atacar() {
+		return "Arqueiro atacando com precisão " + precisao + "!";
 	}
 
 }
