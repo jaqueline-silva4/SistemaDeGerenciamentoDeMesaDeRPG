@@ -12,13 +12,12 @@ public abstract class Personagem {
 	private List<Item> itens;
 	private Personagem mentor;
 	
-	public Personagem(Long id, String nome, int nivel, int vida, ArrayList<Item> itens, Personagem mentor) {
-		super();
+	public Personagem(Long id, String nome, int nivel, int vida, List<Item> itens, Personagem mentor) {
 		this.id = id;
 		this.nome = nome;
 		this.nivel = nivel;
 		this.vida = vida;
-		this.itens = itens;
+		this.itens = itens != null ? itens : new ArrayList<>();
 		this.mentor = mentor;
 	}
 
@@ -83,16 +82,14 @@ public abstract class Personagem {
 	}
 	
 	public void adicionarItem(Item item) {
-		itens.add(item);
+		if(item != null) {
+			itens.add(item);
+		}
 	}
 	
-	public boolean removerItem(int indice) {
-	    if (indice >= 0 && indice < itens.size()) {
-	        itens.remove(indice);
-	        return true;
-	    }
-
-	    return false;
+	public boolean removerItem(Item item) {
+		return itens.remove(item);
+	 
 	}
 	
 	public List<Item> listarItens() {
@@ -107,8 +104,8 @@ public abstract class Personagem {
 		return this.mentor;
 	}
 	
-	public void atacar(String atacar) {
-		System.out.println("Atacando!");		
+	public String atacar() {
+		return "Personagem atacando!";
 		
 	}
 	
