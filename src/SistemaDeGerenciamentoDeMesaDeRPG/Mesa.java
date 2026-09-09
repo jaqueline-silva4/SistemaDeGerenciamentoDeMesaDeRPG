@@ -31,6 +31,14 @@ public class Mesa {
 		return this.nome;
 	}
 	
+	public void setNome(String nome) {
+		if(nome != null && !nome.isEmpty()) {
+			this.nome = nome;
+		} else {
+			System.out.println("Nome inválido!");
+		}
+	}
+
 	public Mestre getMestre() {
 		return this.mestre;
 	}
@@ -44,7 +52,7 @@ public class Mesa {
 	}
 	
 	public List<Jogador> listarJogadores(){
-		return jogadores;
+		return this.jogadores;
 	}
 	
 	public void adicionarParticipacao(Participacao participacao) {
@@ -52,7 +60,7 @@ public class Mesa {
 	}
 	
 	public List<Participacao> listarParticipacoes(){
-		return participacoes;
+		return this.participacoes;
 	}
 	
 	public Sessao criarSessao(Date data, String descricao) {
@@ -62,7 +70,7 @@ public class Mesa {
 	}
 	
 	public List<Sessao> listarSessoes(){
-		return sessoes;
+		return this.sessoes;
 	}
 
 }
