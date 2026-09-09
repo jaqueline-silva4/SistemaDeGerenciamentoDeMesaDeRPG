@@ -6,15 +6,17 @@ import java.util.List;
 
 public class Mesa {
 	
-	private Long id;
+	private static int proximoId = 1;
+	
+	private int id;
 	private String nome;
 	private List<Jogador> jogadores;
 	private List<Participacao> participacoes;
 	private List<Sessao> sessoes;
 	private Mestre mestre;
 	
-	public Mesa(Long id, String nome, Mestre mestre) {
-		this.id = id;
+	public Mesa(String nome, Mestre mestre) {
+		this.id = proximoId++;
 		this.nome = nome;
 		this.mestre = mestre;
 		this.jogadores = new ArrayList<>();
@@ -23,7 +25,7 @@ public class Mesa {
 		
 	}
 	
-	public Long getId() {
+	public int getId() {
 		return this.id;
 	}
 	
@@ -68,9 +70,9 @@ public class Mesa {
 	}
 	
 	public Sessao criarSessao(Date data, String descricao) {
-		Sessao sessao = new Sessao((long) sessoes.size() + 1, data, descricao);
-		sessoes.add(sessao);
-		return sessao;
+	    Sessao sessao = new Sessao(data, descricao);
+	    sessoes.add(sessao);
+	    return sessao;
 	}
 	
 	public List<Sessao> listarSessoes(){

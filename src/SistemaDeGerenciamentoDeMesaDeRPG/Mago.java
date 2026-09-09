@@ -6,8 +6,8 @@ public class Mago extends Personagem implements Atacante {
 	
 	private int inteligencia;
 
-	public Mago(Long id, String nome, int nivel, int vida, List<Item> itens, Personagem mentor, int inteligencia) {
-		super(id, nome, nivel, vida, itens, mentor);
+	public Mago(String nome, int nivel, int vida, List<Item> itens, Personagem mentor, int inteligencia) {
+		super(nome, nivel, vida, itens, mentor);
 		this.inteligencia = inteligencia;
 	}
 

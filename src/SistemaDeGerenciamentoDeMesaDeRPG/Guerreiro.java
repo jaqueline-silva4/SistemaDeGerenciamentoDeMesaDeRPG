@@ -6,8 +6,8 @@ public class Guerreiro extends Personagem implements Atacante {
 	
 	private int forca;
 
-	public Guerreiro(Long id, String nome, int nivel, int vida, List<Item> itens, Personagem mentor, int forca) {
-		super(id, nome, nivel, vida, itens, mentor);
+	public Guerreiro(String nome, int nivel, int vida, List<Item> itens, Personagem mentor, int forca) {
+		super(nome, nivel, vida, itens, mentor);
 		this.forca = forca;
 	}
 

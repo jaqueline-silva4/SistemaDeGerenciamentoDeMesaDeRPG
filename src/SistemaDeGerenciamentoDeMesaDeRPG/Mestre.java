@@ -2,15 +2,17 @@ package SistemaDeGerenciamentoDeMesaDeRPG;
 
 public class Mestre {
 	
-	private Long id;
+	private static int proximoId = 1;
+	
+	private int id;
 	private String nome;
 
-	public Mestre(Long id, String nome) {
-		this.id = id;
+	public Mestre(String nome) {
+		this.id = proximoId++;
 		this.nome = nome;
 	}
 
-	public Long getId() {
+	public int getId() {
 		return this.id;
 	}
 	

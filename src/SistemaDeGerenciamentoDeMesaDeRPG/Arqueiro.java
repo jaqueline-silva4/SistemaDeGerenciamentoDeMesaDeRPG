@@ -6,8 +6,8 @@ public class Arqueiro extends Personagem implements Atacante {
 	
 	private int precisao;
 
-	public Arqueiro(Long id, String nome, int nivel, int vida, List<Item> itens, Personagem mentor, int precisao) {
-		super(id, nome, nivel, vida, itens, mentor);
+	public Arqueiro(String nome, int nivel, int vida, List<Item> itens, Personagem mentor, int precisao) {
+		super(nome, nivel, vida, itens, mentor);
 		this.precisao = precisao;
 	}
 

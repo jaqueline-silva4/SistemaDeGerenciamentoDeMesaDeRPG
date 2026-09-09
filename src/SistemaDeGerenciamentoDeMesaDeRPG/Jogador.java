@@ -5,17 +5,19 @@ import java.util.List;
 
 public class Jogador {
 	
-	private Long id;
+	private static int proximoId = 1;
+	
+	private int id;
 	private String nome;
 	private List<Personagem> personagens;
 	
-	public Jogador(Long id, String nome) {
-	    this.id = id;
+	public Jogador(String nome) {
+	    this.id = proximoId++;
 	    this.nome = nome;
 	    this.personagens = new ArrayList<>();
 	}
 
-	public Long getId() {
+	public int getId() {
 		return this.id;
 	}
 	
@@ -37,9 +39,9 @@ public class Jogador {
 		}
 	}
 	
-	public Personagem buscarPersonagem(Long id) {
+	public Personagem buscarPersonagem(int id) {
 	    for (Personagem personagem : personagens) {
-	        if (personagem.getId().equals(id)) {
+	        if (personagem.getId() == id) {
 	            return personagem;
 	        }
 	    }
@@ -51,7 +53,7 @@ public class Jogador {
 		return this.personagens;
 	}
 	
-	public boolean removerPersonagem(Long id) {
+	public boolean removerPersonagem(int id) {
 	    Personagem personagem = buscarPersonagem(id);
 	    
 	    if(personagem != null) {

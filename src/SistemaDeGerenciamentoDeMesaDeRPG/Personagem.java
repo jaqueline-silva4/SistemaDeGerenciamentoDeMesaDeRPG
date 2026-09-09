@@ -5,15 +5,17 @@ import java.util.List;
 
 public abstract class Personagem {
 	
-	private Long id;
+	private static int proximoId = 1;
+	
+	private int id;
 	private String nome;
 	private int nivel;
 	private int vida;
 	private List<Item> itens;
 	private Personagem mentor;
 	
-	public Personagem(Long id, String nome, int nivel, int vida, List<Item> itens, Personagem mentor) {
-		this.id = id;
+	public Personagem(String nome, int nivel, int vida, List<Item> itens, Personagem mentor) {
+		this.id = proximoId++;
 		this.nome = nome;
 		this.nivel = nivel;
 		this.vida = vida;
@@ -21,7 +23,7 @@ public abstract class Personagem {
 		this.mentor = mentor;
 	}
 
-	public Long getId() {
+	public int getId() {
 		return this.id;
 	}
 	

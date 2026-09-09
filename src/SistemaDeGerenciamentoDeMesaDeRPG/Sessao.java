@@ -4,17 +4,19 @@ import java.util.Date;
 
 public class Sessao {
 	
-	private Long id;
+	private static int proximoId = 1;
+	
+	private int id;
 	private Date data;
 	private String descricao;
 	
-	public Sessao(Long id, Date data, String descricao) {
-		this.id = id;
+	public Sessao(Date data, String descricao) {
+		this.id = proximoId++;
 		this.data = data;
 		this.descricao = descricao;
 	}
 	
-	public Long getId() {
+	public int getId() {
 		return this.id;
 	}
 	
