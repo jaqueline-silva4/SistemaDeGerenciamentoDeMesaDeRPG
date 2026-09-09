@@ -32,7 +32,9 @@ public class Jogador {
 	}
 	
 	public void adicionarPersonagem(Personagem personagem) {
-		personagens.add(personagem);
+		if(personagem != null) {
+			personagens.add(personagem);
+		}
 	}
 	
 	public Personagem buscarPersonagem(Long id) {
@@ -49,8 +51,14 @@ public class Jogador {
 		return this.personagens;
 	}
 	
-	public void removerPersonagem(Long id) {
-	    personagens.removeIf(personagem -> personagem.getId().equals(id));
+	public boolean removerPersonagem(Long id) {
+	    Personagem personagem = buscarPersonagem(id);
+	    
+	    if(personagem != null) {
+	    	personagens.remove(personagem);
+	    	return true;
+	    }
+	    return false;
 	}
 	
 	
