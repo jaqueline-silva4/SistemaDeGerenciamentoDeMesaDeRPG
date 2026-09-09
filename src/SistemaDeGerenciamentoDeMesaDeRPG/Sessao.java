@@ -15,7 +15,7 @@ public class Sessao {
 	}
 	
 	public Long getId() {
-		return id;
+		return this.id;
 	}
 	
 	public Date getData() {
