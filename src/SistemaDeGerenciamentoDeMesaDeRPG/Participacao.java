@@ -1,13 +1,13 @@
 package SistemaDeGerenciamentoDeMesaDeRPG;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class Participacao {
 	
 	private String papel;
-	private LocalDate dataEntrada;
+	private Date dataEntrada;
 	
-	public Participacao(String papel, LocalDate dataEntrada) {
+	public Participacao(String papel, Date dataEntrada) {
 		this.papel = papel;
 		this.dataEntrada = dataEntrada;
 	}
@@ -24,11 +24,11 @@ public class Participacao {
 		}
 	}
 
-	public LocalDate getDataEntrada() {
+	public Date getDataEntrada() {
 		return this.dataEntrada;
 	}
 
-	public void setDataEntrada(LocalDate dataEntrada) {
+	public void setDataEntrada(Date dataEntrada) {
 		this.dataEntrada = dataEntrada;
 	}
 
