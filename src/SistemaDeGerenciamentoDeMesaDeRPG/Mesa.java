@@ -48,7 +48,9 @@ public class Mesa {
 	}
 
 	public void adicionarJogador(Jogador jogador) {
-		jogadores.add(jogador);
+		if(jogador != null) {
+			jogadores.add(jogador);
+		}
 	}
 	
 	public List<Jogador> listarJogadores(){
@@ -56,7 +58,9 @@ public class Mesa {
 	}
 	
 	public void adicionarParticipacao(Participacao participacao) {
-		participacoes.add(participacao);
+		if(participacao != null) {
+			participacoes.add(participacao);
+		}
 	}
 	
 	public List<Participacao> listarParticipacoes(){
