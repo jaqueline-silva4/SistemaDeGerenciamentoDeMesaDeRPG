@@ -19,11 +19,15 @@ public class Mestre {
 	}
 	
 	public void setNome(String nome) {
-		if(nome != null && nome.isEmpty()) {
+		if(nome != null && !nome.isEmpty()) {
 			this.nome = nome;
 		} else {
 			throw new IllegalArgumentException("Nome inválido!");
 		}
+	}
+	
+	public String narrar(String mensagem) {
+		return mensagem;
 	}
 
 }

@@ -1,6 +1,7 @@
 package SistemaDeGerenciamentoDeMesaDeRPG;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Personagem {
 	
@@ -8,7 +9,7 @@ public abstract class Personagem {
 	private String nome;
 	private int nivel;
 	private int vida;
-	private ArrayList<Item> itens;
+	private List<Item> itens;
 	private Personagem mentor;
 	
 	public Personagem(Long id, String nome, int nivel, int vida, ArrayList<Item> itens, Personagem mentor) {
@@ -30,7 +31,7 @@ public abstract class Personagem {
 	}
 	
 	public void setNome(String nome) {
-		if (nome != null & !nome.isEmpty()) {
+		if (nome != null && !nome.isEmpty()) {
 			this.nome = nome;
 		} else {
 			throw new IllegalArgumentException("Nome inválido");
@@ -62,32 +63,47 @@ public abstract class Personagem {
 	}
 	
 	public void receberDano(int dano) {
-		vida -= dano;
-		
+	    if (dano < 0) {
+	        throw new IllegalArgumentException("Dano inválido!");
+	    }
+
+	    vida -= dano;
+
+	    if (vida < 0) {
+	        vida = 0;
+	    }
 	}
 	
 	public void curar(int valor) {
-		vida += valor;
+	    if (valor < 0) {
+	        throw new IllegalArgumentException("Valor de cura inválido!");
+	    }
+
+	    vida += valor;
 	}
 	
 	public void adicionarItem(Item item) {
 		itens.add(item);
 	}
 	
-	private boolean removerItem(int id) {
-		itens.remove(id);
-		return true;
+	public boolean removerItem(int indice) {
+	    if (indice >= 0 && indice < itens.size()) {
+	        itens.remove(indice);
+	        return true;
+	    }
+
+	    return false;
 	}
 	
-	private ArrayList<Item> listarItens() {
-		return this.itens;
+	public List<Item> listarItens() {
+	    return this.itens;
 	}
 	
-	private void definirMentor(Personagem mentor) {
+	public void definirMentor(Personagem mentor) {
 		this.mentor = mentor;
 	}
 	
-	private Personagem getMentor() {
+	public Personagem getMentor() {
 		return this.mentor;
 	}
 	

@@ -1,14 +1,14 @@
 package SistemaDeGerenciamentoDeMesaDeRPG;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class Sessao {
 	
 	private Long id;
-	private LocalDate data;
+	private Date data;
 	private String descricao;
 	
-	public Sessao(Long id, LocalDate data, String descricao) {
+	public Sessao(Long id, Date data, String descricao) {
 		this.id = id;
 		this.data = data;
 		this.descricao = descricao;
@@ -18,11 +18,11 @@ public class Sessao {
 		return id;
 	}
 	
-	public LocalDate getData() {
+	public Date getData() {
 		return this.data;
 	}
 	
-	public void setData(LocalDate data) {
+	public void setData(Date data) {
 		this.data = data;
 	}
 	
@@ -31,7 +31,7 @@ public class Sessao {
 	}
 	
 	public void setDescricao(String descricao) {
-		if(descricao != null && descricao.isEmpty()) {
+		if(descricao != null && !descricao.isEmpty()) {
 			this.descricao = descricao;
 		} else {
 			throw new IllegalArgumentException("Descrição inválida!");

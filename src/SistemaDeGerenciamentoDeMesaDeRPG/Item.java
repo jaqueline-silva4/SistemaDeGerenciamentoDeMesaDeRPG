@@ -27,7 +27,7 @@ public class Item {
 		return this.nome;
 	}
 	public void setNome(String nome) {
-		if (nome != null & !nome.isEmpty()) {
+		if (nome != null && !nome.isEmpty()) {
 			this.nome = nome;
 		} else {
 			throw new IllegalArgumentException("Nome inválido");
@@ -37,7 +37,7 @@ public class Item {
 		return this.tipo;
 	}
 	public void setTipo(String tipo) {
-		if (tipo != null & !tipo.isEmpty()) {
+		if (tipo != null && !tipo.isEmpty()) {
 			this.tipo = tipo;
 		} else {
 			throw new IllegalArgumentException("Tipo inválido");

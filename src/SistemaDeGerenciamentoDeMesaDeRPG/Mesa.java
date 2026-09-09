@@ -19,7 +19,7 @@ public class Mesa {
 	}
 	
 	public void setNome(String nome) {
-		if(nome != null && nome.isEmpty()) {
+		if(nome != null && !nome.isEmpty()) {
 			this.nome = nome;
 		} else {
 			throw new IllegalArgumentException("Nome inválido!");

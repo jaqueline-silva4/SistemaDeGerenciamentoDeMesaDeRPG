@@ -17,7 +17,7 @@ public class Participacao {
 	}
 
 	public void setPapel(String papel) {
-		if (papel != null & !papel.isEmpty()) {
+		if (papel != null && !papel.isEmpty()) {
 			this.papel = papel;
 		} else {
 			throw new IllegalArgumentException("Nome inválido");
