@@ -16,20 +16,8 @@ public class Participacao {
 		return this.papel;
 	}
 
-	public void setPapel(String papel) {
-		if (papel != null && !papel.isEmpty()) {
-			this.papel = papel;
-		} else {
-			throw new IllegalArgumentException("Nome inválido");
-		}
-	}
-
 	public Date getDataEntrada() {
 		return this.dataEntrada;
-	}
-
-	public void setDataEntrada(Date dataEntrada) {
-		this.dataEntrada = dataEntrada;
 	}
 
 }
